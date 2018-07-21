@@ -707,9 +707,13 @@ $('button[clearCloud]').live('click', function(){
 
 $('#restoreSearchEngines button[resetEngines]').live('click', function(){
 	if (confirm('Reset your list of '+(localStorage.extensionName?localStorage.extensionName:'Fauxbar')+' search engines back to their default values?')) {
-		$(this).text('Restoring...').prop('disabled','disabled');
+		var $b = $(this);
+		var txt = $b.text();
+		$b.text('Restoring...').prop('disabled','disabled');
 		setTimeout(function(){
 			resetSearchEngines();
+			$b.text(txt);
+			$b.removeProp('disabled');
 		}, 500);
 	}
 });

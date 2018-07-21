@@ -217,17 +217,6 @@ function compareStringLengths (a, b) {
   return 0; // a and b are the same length
 }
 
-// Remove all non-default search engines
-function resetSearchEngines() {
-	if (openDb()) {
-		window.db.transaction(function(tx){
-			tx.executeSql('DELETE FROM opensearches WHERE iconurl NOT IN (?, ?, ?, ?)', ["google.ico", "duckduckgo.ico", "yahoo.ico", "bing.ico"]);
-		}, function(t){
-			errorHandler(t, getLineInfo());
-		});
-	}
-}
-
 // Set localStorage vars with default Fauxbar values.
 // Used when first loading Fauxbar, or when user chooses to reset all the values.
 function resetOptions() {

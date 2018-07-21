@@ -328,6 +328,11 @@ function getSearchEngines() {
 						'</table>'
 					);
 				}
+				else {
+					$("#opensearchengines").text(
+						"You haven't added any search engines to Fauxbar yet."
+					);
+				}
 				var visibleSEButtons = 0;
 				$(".searchenginebutton").each(function(){
 					if ($('td.searchurl input[value="'+$(this).attr("searchurl")+'"]').length > 0) {
@@ -576,6 +581,22 @@ function addEngineManually() {
 			errorHandler(t, getLineInfo());
 		}, function(){
 			getSearchEngines();
+			chrome.runtime.sendMessage(null, "backup search engines");
+		});
+	}
+}
+
+// Remove all non-default search engines
+function resetSearchEngines() {
+	if (openDb()) {
+		window.db.transaction(function(tx){
+//			tx.executeSql('DELETE FROM opensearches WHERE iconurl NOT IN (?, ?, ?, ?)', ['google.ico', 'duckduckgo.ico', 'yahoo.ico', 'bing.ico']);
+			tx.executeSql('DELETE FROM opensearches');
+		}, function(t){
+			errorHandler(t, getLineInfo());
+		}, function(){
+			getSearchEngines();
+			populateOpenSearchMenu();
 			chrome.runtime.sendMessage(null, "backup search engines");
 		});
 	}
