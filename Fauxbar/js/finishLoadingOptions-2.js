@@ -550,7 +550,6 @@ $('button[resetButton]').live('click', function(){
 	$('#restoreinfo, #backupinfo').css('display','none');
 	if (confirm('Reset your local '+(localStorage.extensionName?localStorage.extensionName:'Fauxbar')+' options back to their default values?\n\nYour history items, bookmarks, search engines, search queries and keywords will remain intact.\n')) {
 		resetOptions();
-		resetSearchEngines();
 		window.location.reload();
 	}
 });
@@ -706,7 +705,16 @@ $('button[clearCloud]').live('click', function(){
 	}
 });
 
-$('#restoreSearchEngineIcons button').live('click', function(){
+$('#restoreSearchEngines button[resetEngines]').live('click', function(){
+	if (confirm('Reset your list of '+(localStorage.extensionName?localStorage.extensionName:'Fauxbar')+' search engines back to their default values?')) {
+		$(this).text('Restoring...').prop('disabled','disabled');
+		setTimeout(function(){
+			resetSearchEngines();
+		}, 500);
+	}
+});
+
+$('#restoreSearchEngines button[restoreIcons]').live('click', function(){
 	if (confirm('Are your search engine icons showing blank white page icons instead of their normal ones?\n\nIf so, click OK; '+localStorage.extensionName+
 				' will load your search engines in a new window, allowing Chrome to retrieve their favicons again.\n\nThis will take a moment. '+localStorage.extensionName+
 				' will automatically reload itself once the operation is complete.')) {

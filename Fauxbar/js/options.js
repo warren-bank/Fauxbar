@@ -660,7 +660,7 @@ if (openDb()) {
 				}
 			}
 			if (!userHasCustomSearchEngines) {
-				$('#restoreSearchEngineIcons').remove();
+				$('#restoreSearchEngines button[restoreIcons]').remove();
 			}
 		});
 	});
