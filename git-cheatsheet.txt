@@ -1,0 +1,35 @@
+# --------------------------------------------------------------------------------------------------
+
+git checkout -f master
+git checkout -b "pulls/01-fix-POST-data-encoding"
+git add --all .
+git commit -m "fix POST data encoding"
+git push -u origin "pulls/01-fix-POST-data-encoding"
+
+# https://github.com/ChrisNZL/Fauxbar/compare/master...warren-bank:pulls/01-fix-POST-data-encoding
+# --------------------------------------------------------------------------------------------------
+
+git checkout -f master
+git checkout -b "pulls/02-reset-search-engines"
+git add --all .
+git commit -m "reset of options should include removal of non-default search engines"
+git push -u origin "pulls/02-reset-search-engines"
+
+git add --all .
+git commit -m "add a new button to trigger this action"
+git push -u origin "pulls/02-reset-search-engines"
+
+git add --all .
+git commit -m "add handler to update list of search engines when the set is empty"
+git push -u origin "pulls/02-reset-search-engines"
+
+# https://github.com/ChrisNZL/Fauxbar/compare/master...warren-bank:pulls/02-reset-search-engines
+# --------------------------------------------------------------------------------------------------
+
+git checkout --orphan "pulls/notes"
+git rm -rf .
+git add --all .
+git commit -m 'git cheatsheet'
+git push -u origin "pulls/notes"
+
+# --------------------------------------------------------------------------------------------------
