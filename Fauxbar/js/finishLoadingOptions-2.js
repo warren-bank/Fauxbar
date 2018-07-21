@@ -550,6 +550,7 @@ $('button[resetButton]').live('click', function(){
 	$('#restoreinfo, #backupinfo').css('display','none');
 	if (confirm('Reset your local '+(localStorage.extensionName?localStorage.extensionName:'Fauxbar')+' options back to their default values?\n\nYour history items, bookmarks, search engines, search queries and keywords will remain intact.\n')) {
 		resetOptions();
+		resetSearchEngines();
 		window.location.reload();
 	}
 });
