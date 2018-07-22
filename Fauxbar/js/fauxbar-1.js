@@ -1170,7 +1170,23 @@ $("#contextMenu .menuOption").live("mousedown", function(){
 			// Search engines
 			default:
 				if ($(this).hasClass("engine")) {
+					var doStaticSearch = function(el) {
+						var $el = $('.menuitem[shortname="'+str_replace('"','&quot;',$(el).attr("shortname"))+'"]');
+						if ($el.length && typeof $el.attr('searchurl') === 'string') {
+							// a search URL without a placeholder variable for dynamic search terms is a static bookmark
+							if ($el.attr('searchurl').indexOf('{searchTerms}') === -1){
+								$("#awesomeinput").val($(el).attr("keyword")+" "+$("#awesomeinput").val()).focus();
+								setTimeout(function(){
+									getResults();
+									submitOpenSearch('static');
+								},1);
+								return true;
+							}
+						}
+					};
 					var doAddressBoxEngineStuff = function(el) {
+						if (doStaticSearch(el)) return;
+
 						if (!window.keywordEngine) {
 							if ($(el).attr("keyword").length) {
 								$("#awesomeinput").val($(el).attr("keyword")+" "+$("#awesomeinput").val()).focus();
