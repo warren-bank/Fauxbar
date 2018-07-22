@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------------
+
+/html/fauxbar.html#options=1
+
+    * Search Engines > Search Engines > Remove all...
+
+    * Management > Options > Import from file...
+        * "01-Fauxbar-Lite-options.json"
+        * "02-Fauxbar-Lite-search-engines-video-hosts.json"
+
+    * Search Engines > Search Engines > Restore missing favicons...
+
+--------------------------------------------------------------------------------
