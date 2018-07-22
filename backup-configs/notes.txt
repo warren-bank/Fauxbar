@@ -11,3 +11,14 @@
     * Search Engines > Search Engines > Restore missing favicons...
 
 --------------------------------------------------------------------------------
+
+all of the video hosting sites (indexed by the above search engines)
+are compatible with "WebCast-Reloaded":
+
+https://github.com/warren-bank/crx-webcast-reloaded
+https://github.com/warren-bank/crx-webcast-reloaded/releases
+
+all of the videos on these sites can be easily "cast"
+from the Chromium desktop web browser to Chromecast(s).
+
+--------------------------------------------------------------------------------
