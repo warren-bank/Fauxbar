@@ -1187,9 +1187,9 @@ $("#contextMenu .menuOption").live("mousedown", function(){
 							}
 						}
 					};
-					var doAddressBoxEngineStuff = function(el) {
-						if (doStaticSearch(el)) return;
+					if (doStaticSearch(this)) return;
 
+					var doAddressBoxEngineStuff = function(el) {
 						if (!window.keywordEngine) {
 							if ($(el).attr("keyword").length) {
 								$("#awesomeinput").val($(el).attr("keyword")+" "+$("#awesomeinput").val()).focus();
