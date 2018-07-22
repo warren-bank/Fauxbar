@@ -33,3 +33,21 @@ git commit -m 'git cheatsheet'
 git push -u origin "pulls/notes"
 
 # --------------------------------------------------------------------------------------------------
+
+git checkout -f master
+git checkout -b "pulls/merge"
+git merge --no-edit "pulls/01-fix-POST-data-encoding"
+git merge --no-edit "pulls/02-reset-search-engines"
+git push -u origin "pulls/merge"
+git tag "v1.7.4-merge-001"
+git push --tags
+
+# https://github.com/ChrisNZL/Fauxbar/compare/master...warren-bank:pulls/merge
+# --------------------------------------------------------------------------------------------------
+
+git checkout -f "pulls/notes"
+git add --all .
+git commit -m 'git cheatsheet'
+git push -u origin "pulls/notes"
+
+# --------------------------------------------------------------------------------------------------
