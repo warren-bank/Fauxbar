@@ -385,8 +385,8 @@
         "encoding": "undefined"
     }, {
         "shortname": "video - anime #04 - Soul Anime",
-        "iconurl": "http://soul-anime.us/",
-        "searchurl": "http://soul-anime.us/search.php?search={searchTerms}",
+        "iconurl": "http://ww5.soul-anime.us/",
+        "searchurl": "http://ww5.soul-anime.us/search.php?search={searchTerms}",
         "method": "get",
         "xmlurl": "",
         "xml": "",
