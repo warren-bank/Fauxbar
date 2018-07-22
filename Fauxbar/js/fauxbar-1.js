@@ -1178,11 +1178,9 @@ $("#contextMenu .menuOption").live("mousedown", function(){
 						if ($el.length && typeof $el.attr('searchurl') === 'string') {
 							// a search URL without a placeholder variable for dynamic search terms is a static bookmark
 							if ($el.attr('searchurl').indexOf('{searchTerms}') === -1){
-								$("#awesomeinput").val($(el).attr("keyword")+" "+$("#awesomeinput").val()).focus();
-								setTimeout(function(){
-									getResults();
-									submitOpenSearch('static');
-								},1);
+								if (window.keywordEngine) window.keywordEngine.shortname = $el.attr("shortname");
+								window.openSearchShortname = $el.attr("shortname");
+								submitOpenSearch('static');
 								return true;
 							}
 						}
