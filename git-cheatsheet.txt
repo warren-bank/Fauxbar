@@ -84,3 +84,30 @@ git commit -m 'data backup: options, search engines'
 git push -u origin "pulls/notes"
 
 # --------------------------------------------------------------------------------------------------
+
+git checkout -f "pulls/03-detect-static-search-engine-urls"
+git add --all .
+git commit -m "search URL without dynamic placeholder is static bookmark"
+git push -u origin "pulls/03-detect-static-search-engine-urls"
+
+# https://github.com/ChrisNZL/Fauxbar/compare/master...warren-bank:pulls/03-detect-static-search-engine-urls
+# --------------------------------------------------------------------------------------------------
+
+git tag -d "v1.7.4-merge-002"
+git push --delete origin "v1.7.4-merge-002"
+
+git checkout -f "pulls/merge"
+git merge --no-edit "pulls/03-detect-static-search-engine-urls"
+git push -u origin "pulls/merge"
+git tag "v1.7.4-merge-002"
+git push --tags
+
+# https://github.com/ChrisNZL/Fauxbar/compare/master...warren-bank:pulls/merge
+# --------------------------------------------------------------------------------------------------
+
+git checkout -f "pulls/notes"
+git add --all .
+git commit -m 'git cheatsheet'
+git push -u origin "pulls/notes"
+
+# --------------------------------------------------------------------------------------------------
