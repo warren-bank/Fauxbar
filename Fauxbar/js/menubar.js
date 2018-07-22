@@ -10,11 +10,11 @@ if (strstr(window.navigator.appVersion, 'Chrome')) {
 	chromeVersion = parseInt(window.navigator.appVersion.match(/Chromium\/(\d+)\./)[1], 10);
 }
 
-function clearMenus() {
+function clearMenus(ignore_context_menu) {
 	$('#menubar menu').removeClass('selected');
 	$('#menubar item.expanded').removeClass('expanded');
 	$('#menubar item.hovering').removeClass('hovering');
-	if (removeContextMenu) {
+	if (!ignore_context_menu && removeContextMenu) {
 		removeContextMenu();
 	}
 }
@@ -324,7 +324,7 @@ $('#menubar menu').live('mouseenter', function(e){
 	(e.target.nodeName == 'MENU' || e.target.nodeName == 'MENUNAME') && $('#menubar menu.selected').length && selectMenu(this);
 });
 $('body :not(#menubar)').live('mousedown', function(){
-	!$(this).parents('#menubar').length && clearMenus();
+	!$(this).parents('#menubar').length && clearMenus(true);
 });
 
 function refreshChromeMenu() {
