@@ -154,7 +154,7 @@
         "position": -3,
         "suggestUrl": "",
         "keyword": "",
-        "encoding": "undefined"
+        "encoding": "other"
     }, {
         "shortname": "video - TV and movies #06.01 - PBS - NewsHour",
         "iconurl": "https://www.pbs.org/",
@@ -478,7 +478,7 @@
         "position": -3,
         "suggestUrl": "",
         "keyword": "",
-        "encoding": "undefined"
+        "encoding": "other"
     }, {
         "shortname": "video - TV and movies #15 - Vudu",
         "iconurl": "https://www.vudu.com/",
@@ -490,7 +490,7 @@
         "position": -3,
         "suggestUrl": "",
         "keyword": "",
-        "encoding": "undefined"
+        "encoding": "other"
     }, {
         "shortname": "video - clips #01 - Vimeo",
         "iconurl": "https://vimeo.com/",
@@ -518,7 +518,7 @@
     }, {
         "shortname": "video - clips #03 - Metacafe",
         "iconurl": "http://www.metacafe.com/",
-        "searchurl": "http://www.metacafe.com/videos_about/{searchTerms}",
+        "searchurl": "http://www.metacafe.com/videos_about/{searchTerms}?channel_filter=videos",
         "method": "get",
         "xmlurl": "",
         "xml": "",
@@ -526,7 +526,7 @@
         "position": -4,
         "suggestUrl": "",
         "keyword": "",
-        "encoding": "undefined"
+        "encoding": "other"
     }, {
         "shortname": "video - clips #04 - Dailymotion",
         "iconurl": "https://www.dailymotion.com/",
@@ -538,7 +538,7 @@
         "position": -4,
         "suggestUrl": "",
         "keyword": "",
-        "encoding": "undefined"
+        "encoding": "other"
     }, {
         "shortname": "video - clips #05 - Viewster",
         "iconurl": "https://www.viewster.com/",
